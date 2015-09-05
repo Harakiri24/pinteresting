@@ -1,1 +1,23 @@
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600);
+$font-family-sans-serif: 'Titillium Web', 'Helvetica Neue', 'Helvetica';
+$navbar-height: 45px;
+$jumbotron-bg: white;
+$body-bg:  #1D2939;
+$navbar-default-bg: #EE6456;
+$navbar-default-link-color: #FFFFFF;
+$brand-primary: #EE6456;
 @import 'bootstrap';
+
+.center {
+  text-align: center;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+.navbar-toggle {
+  background-color: #FFFFFF;
+  border-color: #FFFFFF !important;
+}
