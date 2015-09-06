@@ -16,14 +16,24 @@ class PinsController < ApplicationController
   def edit
   end
 
-  def create
-    @pin = current_user.pins.build(pin_params)
-      if @pin.save
+def create
+  @pin = Pin.new(pin_params)
+  @pin.user_id = current_user.id
+        if @pin.save
        redirect_to @pin, alert: 'Dein Pin wurde erstellt.'
       else
         render :new
       end
-  end
+end
+
+  #def create
+    #@pin = current_user.pins.build(pin_params)
+    #  if @pin.save
+    #   redirect_to @pin, alert: 'Dein Pin wurde erstellt.'
+    #  else
+    #    render :new
+    #  end
+ # end
 
   def update
       if @pin.update(pin_params)
