@@ -17,7 +17,7 @@ class PinsController < ApplicationController
   end
 
   def create
-    @pin = current_user.pins.build(@pin_params)
+    @pin = current_user.pins.build(pin_params)
       if @pin.save
        redirect_to @pin, alert: 'Dein Pin wurde erstellt.'
       else
@@ -50,6 +50,6 @@ class PinsController < ApplicationController
     end
 
     def pin_params
-      params.require(:pin).permit(:description, :image)
+      params.require(:pin).permit(:description, :image, :content_type)
     end
 
