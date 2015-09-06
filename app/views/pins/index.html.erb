@@ -1,8 +1,11 @@
 <h1>Willkommen!</h1>
 
+<% if user_signed_in? %>
+
 <table width="75%">
   <thead>
     <tr>
+      <th>Image</th>
       <th>Beschreibung</th>
       <th>User ID</th>
     </tr>
@@ -11,6 +14,7 @@
   <tbody>
     <% @pins.each do |pin| %>
       <tr>
+        <td><%= image_tag pin.image.url(:medium) %></td>
         <td><%= pin.description %></td>
         <td><%= pin.user.email if pin.user %></td>
         <td><%= link_to 'Show', pin %></td>
@@ -25,7 +29,14 @@
 </table>
 
 <br>
-
-<% if user_signed_in? %>
 <%= link_to 'Neuer Pin', new_pin_path %>
+
+<% else %>
+
+<div class="jumbotron center">
+<p>
+  <%= link_to "Login", new_user_session_path, class: "btn btn-default btn-lg" %>
+  <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+</p>
+</div>
 <% end %>

@@ -1,8 +1,9 @@
 <h1>Show Pin!</h1>
 
 <p>
-  <strong>Description:</strong>
-  <%= @pin.description %>
+
+  <%= image_tag @pin.image.url(:large) %><br />
+  <strong>Description:</strong> <%= @pin.description %>
 </p>
 
 <% if @pin.user == current_user %>
