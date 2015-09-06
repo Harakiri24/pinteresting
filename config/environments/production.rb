@@ -81,7 +81,7 @@ Rails.application.configure do
 
 config.paperclip_defaults = {
   :storage => :s3,
-  :url => ":eu-central-1",
+  :s3_endpoint => 'eu-central-1.amazonaws.com'
   :path => ":class/:id.:style.:extension",
   :s3_credentials => {
     :bucket => ENV['AWS_BUCKET'],
