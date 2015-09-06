@@ -78,8 +78,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
     config.action_mailer.default_url_options = { host: 'cottoneyejoe.herokuapp.com'}
-    Paperclip.options[:image_magick_path] = "/opt/ImageMagick/bin"
-Paperclip.options[:command_path] = "/opt/ImageMagick/bin"
 
 config.paperclip_defaults = {
   :storage => :s3,
