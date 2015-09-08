@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600);
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
 $font-family-sans-serif: 'Titillium Web', 'Helvetica Neue', 'Helvetica';
 $navbar-height: 45px;
 $jumbotron-bg: white;
@@ -15,8 +16,9 @@ $brand-primary: #EE6456;
 }
 
 .navbar-brand {
-  font-weight: 600;
-  font-size: 1.5em;
+  font-weight: 300;
+  font-size: 1.7em;
+  font-family: 'Pacifico', 'Helvetica Neue', 'Helvetica';
 }
 
 .navbar-toggle {
