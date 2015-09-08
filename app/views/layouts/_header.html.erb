@@ -56,16 +56,23 @@
           </li>
         <% else %>
 
-<div class="btn-group" style="padding-top:5px;">
-  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-log-in"></span> Login</button>
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <span class="caret"></span>
-    <span class="sr-only">Toggle Dropdown</span>
-  </button>
-  <ul class="dropdown-menu" style="padding:5px; width:200px; height:275px;">
-    <%= render 'devise/dropdownlogin' %>
-  </ul>
-</div>
+        <li>
+          <%= link_to new_user_session_path do %>
+            <span class="glyphicon glyphicon-log-in"></span> Login
+          <% end %>
+        </li>
+
+          <!-- DROPDOWN
+          <div class="btn-group" style="padding-top:5px;">
+            <button type="button" class="btn btn-info"><span class="glyphicon glyphicon-log-in"></span> Login</button>
+            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="caret"></span>
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <div class="dropdown-menu" style="padding:5px; width:200px; height:275px;">
+              <%= render 'devise/dropdownlogin' %>
+            </div>
+          </div> DROPDOWN-->
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
