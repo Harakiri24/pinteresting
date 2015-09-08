@@ -41,13 +41,13 @@
         <% if user_signed_in? %>
           <li>
             <%= link_to new_pin_path do %>
-              <span class="glyphicon glyphicon-plus"></span> New Pin
+              <span class="glyphicon glyphicon-plus"></span> Neuer Pin
             <% end %>
           </li>
           <li><%= link_to "Mein Account", edit_user_registration_path %></li>
-          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to "LogOut", destroy_user_session_path, method: :delete %></li>
         <% else %>
-        <li><%= link_to "Sign in", new_user_session_path %></li>
+        <li><%= link_to "LogIn", new_user_session_path %></li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
