@@ -15,6 +15,7 @@ gem 'devise'
 gem 'paperclip', '~> 4.2'
 gem 'aws-sdk', '<2.0'
 gem 'masonry-rails'
+gem 'will_paginate-bootstrap'
 
 group :production do
   gem 'pg'
