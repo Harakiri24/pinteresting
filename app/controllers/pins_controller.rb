@@ -1,7 +1,7 @@
 class PinsController < ApplicationController
-  before_action :set_pin, only: [:show, :edit, :update, :destroy]
+  before_action :set_pin, only: [:show, :edit, :update, :destroy, :upvote]
   before_action :correct_user, only: [:edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :upvote]
   def index
     @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 10)
   end
@@ -26,16 +26,7 @@ def create
       end
 end
 
-  #def create
-    #@pin = current_user.pins.build(pin_params)
-    #  if @pin.save
-    #   redirect_to @pin, alert: 'Dein Pin wurde erstellt.'
-    #  else
-    #    render :new
-    #  end
- # end
-
-  def update
+def update
       if @pin.update(pin_params)
         redirect_to @pin, alert: 'Dein Pin wurde bearbeitet.'
       else
@@ -47,8 +38,12 @@ end
     @pin.destroy
       redirect_to pins_url, alert: 'Dein Pin wurde gelöscht.'
     end
-  end
 
+  def upvote
+    @pin.upvote_by current_user
+    redirect_to :back
+  end
+end
   private
     def set_pin
       @pin = Pin.find(params[:id])

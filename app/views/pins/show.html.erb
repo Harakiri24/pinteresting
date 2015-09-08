@@ -1,20 +1,37 @@
-<%= link_to 'Back', pins_path %>
-
 <div class="row">
-  <div class="col-md-offset-2 col-md-8">
+  <div class="col-md-offset-2 col-md-7">
     <div class="panel panel-default">
       <div class="panel-heading center">
         <%= image_tag @pin.image.url(:large) %>
-      </div>
+      </div> <!-- .panel-heading center-->
       <div class="panel-body">
-        <p><%= @pin.description %></p>
-        <p>von <strong><%= @pin.user.name if @pin.user %></strong></p>
-
-        <% if @pin.user == current_user %>
-         <%= link_to 'Edit', edit_pin_path(@pin) %>
-        <% end %>
-
-      </div>
-    </div>
-  </div>
-</div>
+        <h2><%= @pin.description %></h2>
+      </div> <!-- .panel-body -->
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-md-6">
+              <p>von <strong><%= @pin.user.name if @pin.user %></strong></p>
+            </div> <!-- .col-md-6 -->
+            <div class="col-md-6">
+                <div class="btn-group btn-group-sm pull-right" role="group">
+                  <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-default" do %>
+                    <span class="glyphicon glyphicon-heart"></span>
+                    <%= @pin.get_upvotes.size %>
+                  <% end %>
+                  <% if @pin.user == current_user %>
+                    <%= link_to edit_pin_path(@pin), class: "btn btn-default" do %>
+                      <span class="glyphicon glyphicon-edit"></span>
+                      Edit
+                    <% end %>
+                    <%= link_to @pin, method: :delete, data: { confirm: 'Bist du sicher?' }, class: "btn btn-default" do %>
+                      <span class="glyphicon glyphicon-trash"></span>
+                      Löschen
+                    <% end %>
+                  <% end %>
+                </div> <!-- .btn-group btn-group-sm pull-right -->
+            </div> <!-- .col-md-6 -->
+          </div> <!-- .panel-footer -->
+        </div> <!-- .row -->
+    </div> <!-- .panel panel-default -->
+  </div> <!-- .col-md-offset-2 col-md-8 -->
+</div> <!-- .row -->

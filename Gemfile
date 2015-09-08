@@ -16,6 +16,7 @@ gem 'paperclip', '~> 4.2'
 gem 'aws-sdk', '<2.0'
 gem 'masonry-rails'
 gem 'will_paginate-bootstrap'
+gem 'acts_as_votable'
 
 group :production do
   gem 'pg'
