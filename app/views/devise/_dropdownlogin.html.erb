@@ -1,8 +1,3 @@
-<div class="panel panel-default">
-<div class="panel-heading">
-<h1>Log in</h1>
-</div>
-<div class="panel-body">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-group">
     <%= f.label :email %><br />
@@ -26,8 +21,5 @@
   </div>
 <% end %>
 
-</div>
-<div class="panel-footer">
-  <%= render "devise/shared/links" %>
-</div>
-</div>
+<li role="separator" class="divider"></li>
+Oder: <%= link_to "Registrieren", new_user_registration_path %>
