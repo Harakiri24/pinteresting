@@ -6,7 +6,9 @@ $body-bg:  #FFFFFF; /*1D2939*/
 $navbar-default-bg: #EE6456;
 $navbar-default-link-color: #FFFFFF;
 $brand-primary: #EE6456;
+@import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css");
 
 .center {
   text-align: center;
